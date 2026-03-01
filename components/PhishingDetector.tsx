@@ -60,8 +60,8 @@ export function PhishingDetector() {
     
     // Government/Authority impersonation
     "irs", "social security", "government", "legal action",
-    "court", "lawsuit",
-    
+    "court", "lawsuit", "prince", "prince of Egypt", "prince of Persia", "prince of Nigeria",
+
     // Generic suspicious
     "confirm", "verify", "update", "suspended"
   ];
