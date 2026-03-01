@@ -50,7 +50,7 @@ export default function Home() {
             </h1>
           </div>
           <p className="text-lg" style={{ color: '#a0a0c0', maxWidth: '600px', margin: '0 auto' }}>
-            Your comprehensive cybersecurity companion for password security, phishing detection, and web vulnerability scanning
+            Your comprehensive cybersecurity companion for password security, email phishing detection, and web vulnerability scanning
           </p>
         </div>
 
@@ -72,7 +72,7 @@ export default function Home() {
               className="rounded-full data-[state=active]:bg-[#0099CC] data-[state=active]:text-white transition-all"
               style={{ color: '#00FFFF' }}
             >
-              Phishing Detector
+              Email Analyzer
             </TabsTrigger>
             <TabsTrigger 
               value="scanner"
