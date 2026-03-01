@@ -2,23 +2,113 @@
 @import "../styles/theme.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Python app color scheme: Deep cool background (#1c1c3c) with cyan accents (#00FFFF) */
+  --background: #1c1c3c;
+  --foreground: #00FFFF;
+  --card: #2a2a4a;
+  --card-foreground: #ffffff;
+  --primary: #0099CC;
+  --primary-foreground: #ffffff;
+  --secondary: #003366;
+  --secondary-foreground: #00FFFF;
+  --muted: #2a2a4a;
+  --muted-foreground: #a0a0c0;
+  --accent: #0099CC;
+  --accent-foreground: #ffffff;
+  --border: #00FFFF;
+  --input: #2a2a4a;
+  --ring: #00FFFF;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-card: var(--card);
+  --color-border: var(--border);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: 'Helvetica', Arial, sans-serif;
 }
+
+/* Scrolling marquee styles (like Python app) */
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.scrolling-text {
+  animation: scroll 90s linear infinite;
+}
+
+/* Modern button styling (like Python app oval buttons) */
+.modern-button {
+  background: #0099CC;
+  color: white;
+  border-radius: 25px;
+  padding: 12px 40px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 153, 204, 0.3);
+}
+
+.modern-button:hover {
+  background: #0088BB;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 153, 204, 0.4);
+}
+
+/* Frame borders (like Python app solid borders) */
+.tool-frame {
+  border: 2px solid #00FFFF;
+  border-radius: 8px;
+  background: #2a2a4a;
+  padding: 20px;
+}
+
+/* Input field styling */
+input[type="text"],
+input[type="password"],
+input[type="url"],
+textarea {
+  background: #2a2a4a;
+  border: 2px solid #00FFFF;
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #0099CC;
+  box-shadow: 0 0 10px rgba(0, 153, 204, 0.5);
+}
+
+/* Marquee frame styling */
+.marquee-frame {
+  background: #003366;
+  border: 2px solid #000000;
+  padding: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-text {
+  color: #00FFFF;
+  font-size: 14px;
+  display: inline-block;
+}
+

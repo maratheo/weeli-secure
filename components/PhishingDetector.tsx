@@ -306,20 +306,22 @@ export function PhishingDetector() {
   };
 
   return (
-    <Card>
+    <Card className="tool-frame">
       <CardHeader>
-        <CardTitle>AI URL Phishing Detector</CardTitle>
-        <CardDescription>
+        <CardTitle style={{ color: '#00FFFF', fontFamily: 'Helvetica, Arial, sans-serif' }}>
+          AI URL Phishing Detector
+        </CardTitle>
+        <CardDescription style={{ color: '#a0a0c0' }}>
           Analyze URLs for potential phishing threats using AI-powered detection
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="url">URL to Analyze</Label>
+            <Label htmlFor="url" style={{ color: '#00FFFF' }}>URL to Analyze</Label>
             <div className="flex gap-2">
               <div className="relative flex-1">
-                <LinkIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                <LinkIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#00FFFF' }} />
                 <Input
                   id="url"
                   type="text"
@@ -328,9 +330,18 @@ export function PhishingDetector() {
                   onKeyDown={(e) => e.key === 'Enter' && analyzeURL()}
                   placeholder="https://example.com"
                   className="pl-10"
+                  style={{ 
+                    background: '#2a2a4a', 
+                    border: '2px solid #00FFFF', 
+                    color: '#ffffff'
+                  }}
                 />
               </div>
-              <Button onClick={analyzeURL} disabled={isAnalyzing || !url.trim()}>
+              <Button 
+                onClick={analyzeURL} 
+                disabled={isAnalyzing || !url.trim()}
+                className="modern-button"
+              >
                 {isAnalyzing ? "Analyzing..." : "Analyze"}
               </Button>
             </div>

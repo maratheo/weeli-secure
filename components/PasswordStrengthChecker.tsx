@@ -100,16 +100,18 @@ export function PasswordStrengthChecker() {
   };
 
   return (
-    <Card>
+    <Card className="tool-frame">
       <CardHeader>
-        <CardTitle>Password Strength Checker</CardTitle>
-        <CardDescription>
+        <CardTitle style={{ color: '#00FFFF', fontFamily: 'Helvetica, Arial, sans-serif' }}>
+          Password Strength Checker
+        </CardTitle>
+        <CardDescription style={{ color: '#a0a0c0' }}>
           Enter a password to analyze its strength and security level
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="space-y-2">
-          <Label htmlFor="password">Password</Label>
+          <Label htmlFor="password" style={{ color: '#00FFFF' }}>Password</Label>
           <div className="relative">
             <Input
               id="password"
@@ -118,6 +120,11 @@ export function PasswordStrengthChecker() {
               onChange={handlePasswordChange}
               placeholder="Enter your password"
               className="pr-10"
+              style={{ 
+                background: '#2a2a4a', 
+                border: '2px solid #00FFFF', 
+                color: '#ffffff'
+              }}
             />
             <Button
               type="button"
@@ -127,9 +134,9 @@ export function PasswordStrengthChecker() {
               onClick={() => setShowPassword(!showPassword)}
             >
               {showPassword ? (
-                <EyeOff className="h-4 w-4 text-slate-500" />
+                <EyeOff className="h-4 w-4" style={{ color: '#00FFFF' }} />
               ) : (
-                <Eye className="h-4 w-4 text-slate-500" />
+                <Eye className="h-4 w-4" style={{ color: '#00FFFF' }} />
               )}
             </Button>
           </div>
@@ -139,7 +146,7 @@ export function PasswordStrengthChecker() {
           <div className="space-y-4">
             <div className="space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-sm font-medium">Strength:</span>
+                <span className="text-sm font-medium" style={{ color: '#00FFFF' }}>Strength:</span>
                 <span className={`text-sm font-semibold ${analysis.color}`}>
                   {analysis.strength}
                 </span>
@@ -148,7 +155,7 @@ export function PasswordStrengthChecker() {
             </div>
 
             <div className="space-y-2">
-              <h4 className="font-medium text-sm">Security Requirements</h4>
+              <h4 className="font-medium text-sm" style={{ color: '#00FFFF' }}>Security Requirements</h4>
               <div className="space-y-2">
                 <CheckItem
                   checked={analysis.checks.length}
@@ -179,13 +186,13 @@ export function PasswordStrengthChecker() {
 
             {analysis.suggestions.length > 0 && (
               <div className="space-y-2">
-                <h4 className="font-medium text-sm flex items-center gap-2">
+                <h4 className="font-medium text-sm flex items-center gap-2" style={{ color: '#00FFFF' }}>
                   <AlertCircle className="w-4 h-4 text-yellow-600" />
                   Suggestions for Improvement
                 </h4>
                 <ul className="space-y-1">
                   {analysis.suggestions.map((suggestion, idx) => (
-                    <li key={idx} className="text-sm text-slate-600 ml-6">
+                    <li key={idx} className="text-sm ml-6" style={{ color: '#a0a0c0' }}>
                       • {suggestion}
                     </li>
                   ))}
@@ -207,9 +214,10 @@ function CheckItem({ checked, label }: { checked: boolean; label: string }) {
       ) : (
         <XCircle className="w-4 h-4 text-red-500" />
       )}
-      <span className={`text-sm ${checked ? "text-slate-700" : "text-slate-500"}`}>
+      <span className="text-sm" style={{ color: checked ? '#ffffff' : '#a0a0c0' }}>
         {label}
       </span>
     </div>
   );
 }
+

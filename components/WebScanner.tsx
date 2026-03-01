@@ -468,20 +468,22 @@ export function WebScanner() {
   };
 
   return (
-    <Card>
+    <Card className="tool-frame">
       <CardHeader>
-        <CardTitle>Web Security Scanner</CardTitle>
-        <CardDescription>
+        <CardTitle style={{ color: '#00FFFF', fontFamily: 'Helvetica, Arial, sans-serif' }}>
+          Web Security Scanner
+        </CardTitle>
+        <CardDescription style={{ color: '#a0a0c0' }}>
           Comprehensive security scan for vulnerabilities, SSL, headers, and configurations
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="scanUrl">Website URL</Label>
+            <Label htmlFor="scanUrl" style={{ color: '#00FFFF' }}>Website URL</Label>
             <div className="flex gap-2">
               <div className="relative flex-1">
-                <Globe className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                <Globe className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#00FFFF' }} />
                 <Input
                   id="scanUrl"
                   type="text"
@@ -491,9 +493,18 @@ export function WebScanner() {
                   placeholder="https://example.com"
                   className="pl-10"
                   disabled={isScanning}
+                  style={{ 
+                    background: '#2a2a4a', 
+                    border: '2px solid #00FFFF', 
+                    color: '#ffffff'
+                  }}
                 />
               </div>
-              <Button onClick={scanWebsite} disabled={isScanning || !url.trim()}>
+              <Button 
+                onClick={scanWebsite} 
+                disabled={isScanning || !url.trim()}
+                className="modern-button"
+              >
                 {isScanning ? (
                   <>
                     <Loader2 className="w-4 h-4 mr-2 animate-spin" />
@@ -513,8 +524,8 @@ export function WebScanner() {
         {scanResult && scanResult.status === "scanning" && (
           <div className="space-y-3">
             <div className="flex items-center justify-between text-sm">
-              <span className="text-slate-600">Scanning in progress...</span>
-              <span className="font-semibold">{scanResult.progress}%</span>
+              <span style={{ color: '#a0a0c0' }}>Scanning in progress...</span>
+              <span className="font-semibold" style={{ color: '#00FFFF' }}>{scanResult.progress}%</span>
             </div>
             <Progress value={scanResult.progress} className="h-2" />
           </div>
