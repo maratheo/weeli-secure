@@ -1,7 +1,9 @@
 /**
  * Malicious Websites Database
- * Simple localStorage-based database for storing and managing malicious URLs
+ * Loads default sites from config file and allows runtime modifications via localStorage
  */
+
+import defaultSitesConfig from '@/config/malicious-sites.json';
 
 const DB_KEY = 'weeli_malicious_sites_db';
 const DB_VERSION = '1.0';
@@ -22,49 +24,8 @@ interface DatabaseSchema {
   sites: MaliciousSite[];
 }
 
-// Initial malicious sites from the original Python code
-const INITIAL_MALICIOUS_SITES: MaliciousSite[] = [
-  {
-    id: 'default-1',
-    url: 'badwebsite.com',
-    addedDate: new Date().toISOString(),
-    category: 'malware',
-    notes: 'Known malicious site',
-    isDefault: true
-  },
-  {
-    id: 'default-2',
-    url: 'phishing-login.net',
-    addedDate: new Date().toISOString(),
-    category: 'phishing',
-    notes: 'Phishing site targeting login credentials',
-    isDefault: true
-  },
-  {
-    id: 'default-3',
-    url: 'secure-update-account.ru',
-    addedDate: new Date().toISOString(),
-    category: 'phishing',
-    notes: 'Fake account update phishing',
-    isDefault: true
-  },
-  {
-    id: 'default-4',
-    url: 'free-money.xyz',
-    addedDate: new Date().toISOString(),
-    category: 'scam',
-    notes: 'Financial scam site',
-    isDefault: true
-  },
-  {
-    id: 'default-5',
-    url: 'paypal-verification-alert.com',
-    addedDate: new Date().toISOString(),
-    category: 'phishing',
-    notes: 'PayPal impersonation phishing',
-    isDefault: true
-  }
-];
+// Load initial malicious sites from config file
+const INITIAL_MALICIOUS_SITES: MaliciousSite[] = defaultSitesConfig.sites as MaliciousSite[];
 
 class MaliciousDatabase {
   private isClient: boolean;
@@ -74,7 +35,7 @@ class MaliciousDatabase {
   }
 
   /**
-   * Initialize the database with default sites if it doesn't exist
+   * Initialize the database with default sites from config file
    */
   private initializeDb(): DatabaseSchema {
     const initialDb: DatabaseSchema = {

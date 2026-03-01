@@ -1,0 +1,86 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-02-28T00:00:00.000Z",
+  "sites": [
+    {
+      "id": "default-1",
+      "url": "badwebsite.com",
+      "addedDate": "2026-02-28T00:00:00.000Z",
+      "category": "malware",
+      "notes": "Known malicious site",
+      "isDefault": true
+    },
+    {
+      "id": "default-2",
+      "url": "phishing-login.net",
+      "addedDate": "2026-02-28T00:00:00.000Z",
+      "category": "phishing",
+      "notes": "Phishing site targeting login credentials",
+      "isDefault": true
+    },
+    {
+      "id": "default-3",
+      "url": "secure-update-account.ru",
+      "addedDate": "2026-02-28T00:00:00.000Z",
+      "category": "phishing",
+      "notes": "Fake account update phishing",
+      "isDefault": true
+    },
+    {
+      "id": "default-4",
+      "url": "free-money.xyz",
+      "addedDate": "2026-02-28T00:00:00.000Z",
+      "category": "scam",
+      "notes": "Financial scam site",
+      "isDefault": true
+    },
+    {
+      "id": "default-5",
+      "url": "paypal-verification-alert.com",
+      "addedDate": "2026-02-28T00:00:00.000Z",
+      "category": "phishing",
+      "notes": "PayPal impersonation phishing",
+      "isDefault": true
+    },
+    {
+      "id": "default-6",
+      "url": "amazon-account-verify.net",
+      "addedDate": "2026-02-28T00:00:00.000Z",
+      "category": "phishing",
+      "notes": "Amazon impersonation phishing",
+      "isDefault": true
+    },
+    {
+      "id": "default-7",
+      "url": "secure-banking-login.ru",
+      "addedDate": "2026-02-28T00:00:00.000Z",
+      "category": "phishing",
+      "notes": "Banking credential theft",
+      "isDefault": true
+    },
+    {
+      "id": "default-8",
+      "url": "tax-refund-claim.xyz",
+      "addedDate": "2026-02-28T00:00:00.000Z",
+      "category": "scam",
+      "notes": "Fake tax refund scam",
+      "isDefault": true
+    },
+    {
+      "id": "default-9",
+      "url": "cryptocurrency-giveaway.com",
+      "addedDate": "2026-02-28T00:00:00.000Z",
+      "category": "scam",
+      "notes": "Crypto scam",
+      "isDefault": true
+    },
+    {
+      "id": "default-10",
+      "url": "microsoft-support-alert.net",
+      "addedDate": "2026-02-28T00:00:00.000Z",
+      "category": "phishing",
+      "notes": "Tech support scam",
+      "isDefault": true
+    }
+  ]
+}

@@ -329,11 +329,12 @@ export function PhishingDetector() {
                   onChange={(e) => setUrl(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && analyzeURL()}
                   placeholder="https://example.com"
-                  className="pl-10"
+                  className="pl-16"
                   style={{ 
                     background: '#2a2a4a', 
                     border: '2px solid #00FFFF', 
-                    color: '#ffffff'
+                    color: '#ffffff',
+                    paddingLeft: '2.5rem'
                   }}
                 />
               </div>

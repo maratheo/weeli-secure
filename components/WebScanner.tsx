@@ -491,12 +491,13 @@ export function WebScanner() {
                   onChange={(e) => setUrl(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && scanWebsite()}
                   placeholder="https://example.com"
-                  className="pl-10"
+                  className="pl-16"
                   disabled={isScanning}
                   style={{ 
                     background: '#2a2a4a', 
                     border: '2px solid #00FFFF', 
-                    color: '#ffffff'
+                    color: '#ffffff',
+                    paddingLeft: '2.5rem'
                   }}
                 />
               </div>
